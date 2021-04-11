@@ -1,0 +1,73 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+  background-color: #111;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.polygon {
+  width: 200px;
+  height: 230px;
+  -webkit-clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #0B0854;
+}
+.polygon:hover {
+  animation: rotate 1s ease-out forwards;
+  cursor: pointer;
+}
+.polygon:hover .polygon__image {
+  animation: image 0.7s ease-in forwards;
+  animation-delay: 0.5s;
+}
+.polygon .polygon__container {
+  width: 185px;
+  height: 215px;
+  -webkit-clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  background-color: #111;
+}
+.polygon .polygon__image {
+  width: 100%;
+  height: 100%;
+  background-image: url(./img/panda.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 70% center;
+  opacity: 0;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(180deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes image {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/*# sourceMappingURL=stylesheet.css.map */
